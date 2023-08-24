@@ -20,6 +20,7 @@ public class PaymentResource {
 	@GetMapping(value = "/{workerId}/days/{days}")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
 		Payment payment = paymentService.getPayment(workerId, days);
+		System.out.println(payment);
 		return ResponseEntity.ok(payment);
 	}
 
